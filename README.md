@@ -3,3 +3,6 @@ CRUD de la tabla Materia  Create/Crear  Read/Leer  Update/Actualizar  Delate/Bor
 
 ![image](https://github.com/user-attachments/assets/f79d4ef1-a76e-4141-90dc-4a2857916fd7)
 
+
+# Guardar Registro card form input
+![image](https://github.com/user-attachments/assets/43dcbb14-6cb8-4f2a-9bcc-4693573f696c)
