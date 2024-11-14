@@ -7,6 +7,6 @@ CRUD de la tabla Materia  Create/Crear  Read/Leer  Update/Actualizar  Delate/Bor
 # Guardar Registro card form input
 ![image](https://github.com/user-attachments/assets/43dcbb14-6cb8-4f2a-9bcc-4693573f696c)
 
-## Fin de crud tabla materia
+# Fin de crud tabla materia
 ![image](https://github.com/user-attachments/assets/c5580323-b7dc-411b-a553-3b19dc09ad37)
 
