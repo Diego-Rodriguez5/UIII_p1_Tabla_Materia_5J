@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<div class="row">
+<div class="col-md-4 offset-md-4">
+    <!-- La targeta card -->
+    <div class="card"> <!-- targeta -->
+        <div class="card-body">
+            <form action="/editarCliente/" method="POST"> {% csrf_token %} <!--- formulario -->
+
+                <div class="form-group">
+                    <input type="text" id="txtcodigo" name="txtcodigo" class="form-control"
+                    value="{{misclientes.idCliente}}" minLenght="6" maxLenght="6" readonly required>
+                </div>
+
+                <div class="form-group py-3">
+                    <input type="text" id="txtnombre" name="txtnombre" class="form-control"
+                    value="{{misclientes.nombre}}" maxLenght="50" required>
+                </div>
+
+                <div class="form-group py-2">
+                    <input type="text" id="numcreditos" name="numcreditos" class="form-control"
+                    value="{{misclientes.apellido}}" min="1" max="50" required>
+                </div>
+
+                <div class="form-group py-2">
+                    <input type="text" id="numcreditos" name="numcreditos" class="form-control"
+                    value="{{misclientes.direccion}}" min="1" max="100" required>
+                </div>
+
+                <div class="form-group py-2">
+                    <input type="text" id="numcreditos" name="numcreditos" class="form-control"
+                    value="{{misclientes.telefono}}" min="1" max="15" required>
+                </div>
+
+                <div class="form-group py-2">
+                    <input type="text" id="numcreditos" name="numcreditos" class="form-control"
+                    value="{{misclientes.correo}}" min="1" max="50" required>
+                </div>
+
+                <div class="form-group py-2">
+                    <input type="text" id="numcreditos" name="numcreditos" class="form-control"
+                    value="{{misclientes.fechaRegistro}}" min="1" max="9" required>
+                </div>
+
+                <div class="form-group py-2">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form><!--- formulario -->
+        </div>
+    </div> <!-- targeta -->
+
+
+<!-- Fin la targeta card -->
+
+</div> <!-- Columna  -->
+
+</div> <!-- la fila  -->
+
+{% endblock %}
