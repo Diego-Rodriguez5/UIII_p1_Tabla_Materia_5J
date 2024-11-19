@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<div class="row"><!-- la fila -->
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"><!-- columna izquierda -->
+        <h1> Datos </h1>
+    <div class="card"> <!-- targeta -->
+        <div class="card-body">
+            <form action="registrarSucursales/" method="POST"> {% csrf_token %} <!--- formulario -->
+                <div class="form-group">
+                    <input type="text" id="txtidSucursales" name="txtidSucursales" class="form-control"
+                    placeholder="Id Sucursales" minLenght="6" maxLenght="6" required>
+                </div>
+
+                <div class="form-group py-3">
+                    <input type="text" id="txtnombre" name="txtnombre" class="form-control"
+                    placeholder="Nombre Sucursales" maxLenght="50" required>
+                </div>
+
+                <div class="form-group py-3">
+                    <input type="text" id="txtdireccion" name="txtdireccion" class="form-control"
+                    placeholder="Direccion Sucursales" maxLenght="100" required>
+                </div>
+
+                <div class="form-group py-3">
+                    <input type="text" id="txttelefono" name="txttelefono" class="form-control"
+                    placeholder="Telefono Sucursales" maxLenght="15" required>
+                </div>
+
+                <div class="form-group py-3">
+                    <input type="text" id="txtciudad" name="txtciudad" class="form-control"
+                    placeholder="Ciudad Sucursales" maxLenght="30" required>
+                </div>
+
+                <div class="form-group py-3">
+                    <input type="text" id="txtgerente" name="txtgerente" class="form-control"
+                    placeholder="Gerente Sucursales" maxLenght="50" required>
+                </div>
+
+                <div class="form-group py-3">
+                    <input type="text" id="txthorarioAtencion" name="txthorarioAtencion" class="form-control"
+                    placeholder="HorarioAtencion Sucursales" maxLenght="20" required>
+                </div>
+
+
+                <div class="form-group py-2">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form><!--- formulario -->
+        </div>
+    </div> <!-- targeta -->
+    </div><!-- columna izquierda -->
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"><!-- columna derecha -->
+    <h1>Listado de Sucursales</h1>
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">idSucursales</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Gerente</th>
+            <th scope="col">HorarioAtencion</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for m in missucursales %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{m.idSucursales}}</td>
+                    <td>{{m.nombre}}</td>
+                    <td>{{m.direccion}}</td>
+                    <td>{{m.telefono}}</td>
+                    <td>{{m.ciudad}}</td>
+                    <td>{{m.gerente}}</td>
+                    <td>{{m.horarioAtencion}}</td>
+                    <td> <a href="seleccionarSucursales/{{m.codigo}}" class="btn btn-primary">Editar</a></td> 
+                    <td> <a href="borrarSucursales/{{m.codigo}}" class="btn btn-secondary">Borrar</a></td> 
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div.table.responsive>
+    </div> <!-- columna derecha -->
+</div><!-- la fila -->
+
+
+
+{% endblock %}
